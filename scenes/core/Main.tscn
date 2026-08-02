@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bitlkjb1a8v55"]
+
+[ext_resource type="Script" path="res://scripts/core/Main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ResonanceHUD.tscn" id="2_hud"]
+
+[node name="Main" type="Node2D" unique_id=1268959782]
+script = ExtResource("1_main")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=550756049]
+anchor_mode = 0
+
+[node name="WorldContainer" type="Node2D" parent="." unique_id=968664470]
+
+[node name="ResonanceHUD" parent="." unique_id=1107801132 instance=ExtResource("2_hud")]

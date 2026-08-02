@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/VillageOverview.gd" id="1_overview"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ResonanceHUD.tscn" id="2_hud"]
+
+[node name="VillageOverview" type="CanvasLayer"]
+script = ExtResource("1_overview")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.16, 0.22, 1)
+
+[node name="ResonanceHUD" parent="." instance=ExtResource("2_hud")]
+
+[node name="HeaderPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(500, 44)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 115.0
+offset_right = 250.0
+offset_bottom = 159.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="HeaderPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SNOWY MOUNTAIN VILLAGE MAP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 165.0
+offset_right = 300.0
+offset_bottom = 190.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 14
+text = "Select an unlocked location to investigate:"
+horizontal_alignment = 1
+
+[node name="LocationsContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(600, 440)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ChildHouseBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "1. Child's Cottage (Hope)"
+
+[node name="OldManHouseBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "2. Old Man's House (Acceptance)"
+
+[node name="TeacherHouseBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "3. Schoolhouse (Anger)"
+
+[node name="EngineerWorkshopBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "4. Engineer's Workshop (Fear)"
+
+[node name="BellTreeBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "5. The Bell Tree"
+
+[node name="FrozenLabBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "6. Frozen Laboratory"
+
+[node name="FinalClimaxBtn" type="Button" parent="LocationsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "7. Final Climax"

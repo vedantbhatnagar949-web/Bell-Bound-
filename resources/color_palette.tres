@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ColorPalette" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/ColorPalette.gd" id="1_palette"]
+
+[resource]
+script = ExtResource("1_palette")
+soft_snow_white = Color(0.941176, 0.956863, 0.972549, 1)
+cool_blue_grey = Color(0.545098, 0.607843, 0.705882, 1)
+deep_desaturated_blue = Color(0.0862745, 0.12549, 0.196078, 1)
+muted_brown_wood = Color(0.290196, 0.207843, 0.145098, 1)
+warm_lantern_orange = Color(1, 0.619608, 0.231373, 1)

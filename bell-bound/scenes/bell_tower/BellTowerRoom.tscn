@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/locations/BellTowerRoom.gd" id="1_towerroom"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DialogueUI.tscn" id="2_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ResonanceHUD.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ObjectiveTrackerHUD.tscn" id="4_objective"]
+
+[node name="BellTowerRoom" type="CanvasLayer"]
+script = ExtResource("1_towerroom")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.1, 0.14, 1)
+
+[node name="ResonanceHUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="ObjectiveTrackerHUD" parent="." instance=ExtResource("4_objective")]
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 115.0
+offset_right = 550.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 22
+text = "IMPRISONED: INSIDE THE BELL TOWER ROOM"
+
+[node name="LockedDoorVisual" type="ColorRect" parent="."]
+offset_left = 480.0
+offset_top = 220.0
+offset_right = 800.0
+offset_bottom = 440.0
+color = Color(0.35, 0.25, 0.2, 0.85)
+
+[node name="DoorLabel" type="Label" parent="LockedDoorVisual"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Heavy Oak Tower Door"
+horizontal_alignment = 1
+
+[node name="DoorStatusLabel" type="Label" parent="LockedDoorVisual"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "[LOCKED FROM OUTSIDE]"
+horizontal_alignment = 1
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PickLockBtn" type="Button" parent="UI"]
+custom_minimum_size = Vector2(260, 50)
+offset_left = 510.0
+offset_top = 460.0
+offset_right = 770.0
+offset_bottom = 510.0
+text = "🔓 Pick Heavy Iron Lock"
+
+[node name="ClimbStairsBtn" type="Button" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(260, 50)
+offset_left = 510.0
+offset_top = 530.0
+offset_right = 770.0
+offset_bottom = 580.0
+text = "🏃 Climb Spiral Stairs to Top >"
+
+[node name="DialogueUI" parent="." instance=ExtResource("2_dialogue")]

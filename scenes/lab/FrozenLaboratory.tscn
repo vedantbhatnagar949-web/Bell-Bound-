@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/locations/FrozenLaboratory.gd" id="1_frozenlab"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DialogueUI.tscn" id="2_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ResonanceHUD.tscn" id="3_hud"]
+
+[node name="FrozenLaboratory" type="CanvasLayer"]
+script = ExtResource("1_frozenlab")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.22, 0.28, 1)
+
+[node name="ResonanceHUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 115.0
+offset_right = 450.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 24
+text = "FROZEN LABORATORY"
+
+[node name="JournalPlaceholder" type="ColorRect" parent="."]
+offset_left = 540.0
+offset_top = 280.0
+offset_right = 740.0
+offset_bottom = 460.0
+color = Color(0.3, 0.7, 0.85, 0.8)
+
+[node name="JournalLabel" type="Label" parent="JournalPlaceholder"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mother's Journal"
+horizontal_alignment = 1
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReadJournalButton" type="Button" parent="UI"]
+custom_minimum_size = Vector2(200, 48)
+offset_left = 540.0
+offset_top = 490.0
+offset_right = 740.0
+offset_bottom = 538.0
+text = "Read Mother's Journal"
+
+[node name="ReturnButton" type="Button" parent="UI"]
+custom_minimum_size = Vector2(180, 42)
+offset_left = 40.0
+offset_top = 640.0
+offset_right = 220.0
+offset_bottom = 682.0
+text = "< Return to Village"
+
+[node name="DialogueUI" parent="." instance=ExtResource("2_dialogue")]
